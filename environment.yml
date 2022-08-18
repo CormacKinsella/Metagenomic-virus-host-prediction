@@ -1,0 +1,11 @@
+name: hostPredict
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - bwa
+  - blast
+  - bbmap
+  - pathoscope
+prefix: /project/kinsella/programmes/miniconda_local/envs/hostPredict
