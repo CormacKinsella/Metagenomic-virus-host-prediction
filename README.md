@@ -14,7 +14,12 @@
 # Usage:
 
 Prerequisite programmes in $PATH:
-- xyz
+- bwa
+- blast
+- bbmap
+- pathoscope
+- entrez-direct
+- samtools
 
 Alternatively, a conda environment.yml is provided in this repository for fast setup.
 Get conda here:
