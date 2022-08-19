@@ -9,7 +9,7 @@
 - This workflow can be used to identify viruses & cellular taxa in samples, and then pinpoint which possible host taxa occur at high prevalence alongisde viruses
 - Follow-up with statistical testing can establish whether these taxa are found at higher prevalence than in virus negative samples
 - Once computational prediction of a host is done, targeted validation is possible
-- The workflow assumes a eukaryotic host, and otherwise remains agnostic to host taxonomy. Though untested, it should also work for prokaryotes with minor changes
+- The workflow assumes a eukaryotic host, and otherwise remains agnostic to host taxonomy. Though untested, it should also work for prokaryotes with a minor change
 
 # Dependencies:
 Prerequisite programmes in $PATH:
