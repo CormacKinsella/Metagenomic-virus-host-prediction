@@ -1,18 +1,17 @@
 # Metagenomic-virus host prediction
 
-## Linux workflow for identifying over-represented eukaryotic taxa in virus positive samples.
+## Linux workflow for predicting hosts of viruses found using metagenomics.
 
-# Highlights
+# Background
 - Viruses found in metagenomic datasets are often not linked to their hosts due to high biodiversity in samples (many potential pairings = difficult to infer host)
-- Despite this, hosts nucleic acids are often sequenced alongside their viruses
-- Given a cohort of samples, some containing the host, and some not - it may be possible to predict likely hosts
-- A set of virus positive samples should contain an enrichment in the eukaryotic/prokaryotic host versus virus negative samples
-- Follow-up tests can then be targeted, given a specific putative host
-- This workflow carries out the necessary sub-steps
-- It remains agnostic to host taxonomy (though you may target eukaryotic vs. prokaryotic hosts for example) 
+- Despite this, host nucleic acids are often sequenced alongside their viruses; we must therefore find the needle in the haystack
+- Given a cohort of samples, some containing a virus lineage, and some not, it may be possible to predict hosts
+- This workflow can be used to identify viruses & cellular taxa in samples, and then pinpoint which possible host taxa occur at high prevalence alongisde viruses
+- Follow-up with statistical testing can establish whether these taxa are found at higher prevalence than in virus negative samples
+- Once computational prediction of a host is done, targeted validation is possible
+- The workflow assumes a eukaryotic host, and otherwise remains agnostic to host taxonomy. Though untested, it should also work for prokaryotes with minor changes
 
 # Dependencies:
-
 Prerequisite programmes in $PATH:
 - bwa
 - blast
@@ -55,8 +54,6 @@ rm SILVA_138.1_?SURef_NR99_tax_silva.fasta.gz
 update_blastdb.pl --blastdb_version 5 nt --decompress
 ```
 
-
-
 # Usage:
 
 ## Step 1: Identify virus positive samples
@@ -64,8 +61,6 @@ update_blastdb.pl --blastdb_version 5 nt --decompress
 ## Step 2: Metagenomic analysis of cellular taxa in samples
 
 ## Step 3: Identify potential host taxa enriched in virus positive samples
-
-
 
 
 # Notes:
