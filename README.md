@@ -33,7 +33,7 @@ conda list
 
 # Required input files:
 - Metagenomic sequence reads from a suitable cohort. These are assumed to be paired-end fastq.gz, with extensions "_1.fastq.gz" & "_2.fastq.gz"
-- Virus reference genomes in a file named "viruses.fas". Remove spaces or special characters from headers, e.g.:
+- Virus reference genomes in a file named "viruses.fas". Remove spaces & special characters from headers, e.g.:
 ```
 >Kirkoviridae_7_sampled_pig_stool
 >Kirkoviridae_8_sampled_bovine_stool
@@ -56,9 +56,13 @@ update_blastdb.pl --blastdb_version 5 nt --decompress
 
 # Usage:
 
-## Step 1: Identify virus positive samples
+## Step 1: Identify virus positive samples (GenerateVirusMatrix.sh)
+- Outputs a data matrix and processed sam files
+- First two matrix columns contain sample names & read counts for later normalisation
+- Data columns (one per reference genome) contain raw virus read counts after quality control
+- Rows are merged per sample (i.e. 100 input files with forward and reverse reads = 50 data rows with total values)
 
-## Step 2: Metagenomic analysis of cellular taxa in samples
+## Step 2: Metagenomic analysis of eukaryotic taxa in samples
 
 ## Step 3: Identify potential host taxa enriched in virus positive samples
 
