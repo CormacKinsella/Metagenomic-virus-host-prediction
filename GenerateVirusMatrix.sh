@@ -56,7 +56,7 @@ for i in *sam.fasta; do blastn -query $i -db $reference_file -outfmt "6 qseqid s
 for i in *fmt6; do awk '$4 > 40' $i | cut -f1 | sort | uniq > $i.hq; done
 for i in *sam; do grep -Ff ${i}.fasta.fmt6.hq $i > ${i%sam}hq.sam; done
 
-# Merge paired-end outputs (done late as identical forward and reverse read names might be lost otherwise)
+# Merge paired-end outputs (done late, since identical forward and reverse read names will otherwise be lost)
 for i in *_1.fastq.gz.vir.hq.sam; do cat $i ${i%1.fastq.gz*}2.fastq.gz.vir.hq.sam >> ${i%1.fastq.gz*}merged.fastq.gz.vir.hq.sam; done
 
 # Construct data matrix
