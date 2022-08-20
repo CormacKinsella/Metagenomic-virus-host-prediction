@@ -56,14 +56,14 @@ update_blastdb.pl --blastdb_version 5 nt --decompress
 
 # Usage:
 
-- Steps 1 and 2 are provided as slurm batch scripts. Adjust workload manager information and variables for your system.
-- Step 3 is a short bash script to be run after steps 1 and 2 are finished - and virus positive samples have been manually selected (see below).  
+- Steps 1 and 2 are provided as slurm batch scripts. Adjust workload manager information and variables for your system
+- Step 3 is a short bash script to be run after steps 1 and 2 are finished, and a list of virus positive samples is known (see below)
 
 ## Step 1: Identify virus positive samples (GenerateVirusMatrix.sh)
 - Outputs a data matrix and processed sam files
 - First two matrix columns contain sample names & read counts for later normalisation
-- Data columns (one per reference genome) contain raw virus read counts after quality control
-- Counts are merged per sample (i.e. per 2 input files with forward and reverse reads = 1 data row with total values)
+- Remaining data columns (one per reference genome) contain raw virus read counts after quality control
+- Counts are merged per sample (i.e. forward and reverse read files = 1 data row with total values)
 
 ## Step 2: Metagenomic analysis of eukaryotic taxa in samples
 (name.sh)
