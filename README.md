@@ -49,10 +49,32 @@ wget https://www.arb-silva.de/fileadmin/silva_databases/release_138.1/Exports/SI
 zcat SILVA_138.1_* | sed 's/ /_/g' | sed 's/;/_/g' | sed 's/\//_/g' | sed 's/://g' | sed '/^[^>]/ y/uU/tT/' | gzip > SILVA_138.1_LSU_SSU_Ref_NR99_tax_silva.fasta.gz
 rm SILVA_138.1_?SURef_NR99_tax_silva.fasta.gz
 ```
-- GenBank nt v5 database. To download, use the script provided with BLAST+ (N.B. database is >100 GB)
+- GenBank nt v5 database. To download, use the script "update_blastdb.pl" provided with BLAST+ (N.B. database is >100 GB)
+- Ensure taxonomy is properly integrated into the database (see below)
+- Due to long download time, this should be run on a compute node (most login nodes will terminate the process before it can finish)
 ```
-update_blastdb.pl --blastdb_version 5 nt --decompress
+cd /desired_database_location
+perl /BLAST_installation_directory/bin/update_blastdb.pl --blastdb_version 5 nt --decompress
+wget ftp://ftp.ncbi.nlm.nih.gov/blast/db/taxdb.tar.gz
+tar -xzf taxdb.tar.gz
 ```
+- To ensure the taxonomy file you downloaded can be seen by BLAST, you need to edit the ~/.bashrc file (so this will be run on all future ssh client sessions)
+```
+nano ~/.bashrc
+# Paste following two lines:
+BLASTDB=/desired_database_location
+export BLASTDB
+
+# Exit the file (ctrl + X), save (hit Y), retain file name (hit Enter). 
+# Restart ssh client session
+```
+
+
+
+
+
+
+
 
 # Usage:
 
