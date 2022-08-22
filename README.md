@@ -86,5 +86,5 @@ SRR6713818
 ```
 bash IdentifyOverRepresented.sh
 ```
-- Outputs a folder containing the list of virus positive samples and a summary of which taxa are commonly found in them
+- Outputs a folder (potentialHosts) containing the list of virus positive samples and a summary of which taxa are commonly found in them
 - It is important to take taxa of interest identified here, and confirm if any statistical link is found between them and the viruses (i.e. are they truly over-represented in virus positive samples, or just prevalent across all samples)
