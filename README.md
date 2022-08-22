@@ -50,7 +50,7 @@ zcat SILVA_138.1_* | sed 's/ /_/g' | sed 's/;/_/g' | sed 's/\//_/g' | sed 's/://
 rm SILVA_138.1_?SURef_NR99_tax_silva.fasta.gz
 ```
 - GenBank nt v5 database. To download, use the script "update_blastdb.pl" provided with BLAST+ (N.B. database is >100 GB)
-- Ensure taxonomy is properly integrated into the database (see below)
+- Ensure taxonomy is properly integrated into the database (taxdb download and unpack, see below)
 - Due to long download time, this should be run on a compute node (most login nodes will terminate the process before it can finish)
 ```
 cd /desired_database_location
@@ -58,23 +58,6 @@ perl /BLAST_installation_directory/bin/update_blastdb.pl --blastdb_version 5 nt 
 wget ftp://ftp.ncbi.nlm.nih.gov/blast/db/taxdb.tar.gz
 tar -xzf taxdb.tar.gz
 ```
-- To ensure the taxonomy file you downloaded can be seen by BLAST, you need to edit the ~/.bashrc file (so this will be run on all future ssh client sessions)
-```
-nano ~/.bashrc
-# Paste following two lines:
-BLASTDB=/desired_database_location
-export BLASTDB
-
-# Exit and restart ssh client session
-```
-
-
-
-
-
-
-
-
 # Usage:
 
 - Steps 1 and 2 are provided as slurm batch scripts. Adjust workload manager information and variables for your system
@@ -89,7 +72,22 @@ export BLASTDB
 ## Step 2: Metagenomic analysis of eukaryotic taxa in samples
 (name.sh)
 - Outputs...
-- 
+
+No MATRIX... Why???
+- see below example of how to add columns later. 
+
+- Carries out taxonomy lookups for each unique NCBI taxid found (N.B. BLASTn can also output a scientific name using "ssciname", but this will be the lowest available taxonomy rank, normally but not always the binomial name. Using lookups adds a futher, rather slow step, but ensures a consistent taxonomic rank, and allows any rank to be selected (e.g. genus, family, etc.). Note that BLASTn is still set to output ssciname, however this is for later parsing of fmt6 files to output read counts for specific genera)
+ 
+
+
+
+
+
+
+
+
+
+
 
 ## Step 3: Identify potential host taxa enriched in virus positive samples 
 (NAME.sh)
