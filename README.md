@@ -6,7 +6,7 @@
 - Viruses found in metagenomic datasets are often not linked to their hosts due to high biodiversity in samples (many potential pairings = difficult to infer host)
 - Despite this, host nucleic acids are often sequenced alongside their viruses; we must therefore find the needle in the haystack
 - Given a cohort of samples, some containing a virus lineage, and some not, it may be possible to predict hosts
-- This workflow can be used to identify viruses & cellular taxa in samples, and then pinpoint which possible host taxa occur at high prevalence alongisde viruses
+- This workflow can be used to identify viruses & cellular taxa in samples, and then pinpoint which possible host taxa occur at high prevalence alongside viruses
 - Follow-up with statistical testing can establish whether these taxa are found at higher prevalence than in virus negative samples
 - Once computational prediction of a host is done, targeted validation is possible
 - The workflow assumes a eukaryotic host, and otherwise remains agnostic to host taxonomy. Though untested, it should also work for prokaryotes with a minor change
@@ -64,7 +64,7 @@ tar -xzf taxdb.tar.gz
 - Step 3 is a short bash script to be run after steps 1 and 2 are finished, and a list of virus positive samples is known (see below)
 
 ## Step 1: Identify virus positive samples (GenerateVirusMatrix.sh)
-- Outputs a data matrix and processed sam files
+- Outputs a data matrix and processed SAM files
 - First two matrix columns contain sample names & read counts for later normalisation
 - Remaining data columns (one per reference genome) contain raw virus read counts after quality control
 - Counts are merged per sample (i.e. forward and reverse read files = 1 data row with total values)
@@ -88,13 +88,5 @@ SRR6713818
 ```
 bash IdentifyOverRepresented.sh
 ```
-
-- Outputs 
-
-
-
-
-
-
-
-
+- Outputs a folder containing the list of virus positive samples and a summary of which taxa are commonly found in them
+- It is important to take taxa of interest identified here, and confirm if any statistical link is found between them and the viruses (i.e. are they truly over-represented in virus positive samples, or just prevalent across all samples)
