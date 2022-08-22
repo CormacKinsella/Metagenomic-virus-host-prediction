@@ -14,7 +14,7 @@ mkdir potentialHosts
 cd potentialHosts
 cp ../virusPositives.txt .
 posCount=`cat virusPositives.txt | wc -l`
-echo "You found $posCount virus positive samples" >> summary.txt; echo >> summary.txt
+echo >> summary.txt; echo "You found $posCount virus positive samples" >> summary.txt; echo >> summary.txt
 while read line; do ln -s ../$line*uniq . ; done < virusPositives.txt
 
 # All taxa found across virus positive samples
