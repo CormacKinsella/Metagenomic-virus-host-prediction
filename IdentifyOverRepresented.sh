@@ -21,7 +21,7 @@ while read line; do ln -s ../$line*uniq . ; done < virusPositives.txt
 cat *uniq | sort > all_taxon_occurences.txt
 
 # Top hits
-echo "Of these, the top 25 most frequently found taxa are (sampleCount, taxon):"  >> summary.txt
+echo "In these, the top 25 most frequently found taxa are (sampleCount, taxon):"  >> summary.txt
 cat all_taxon_occurences.txt | uniq -c | sort -k1,1nr | head -n 25 | sed 's/^     //' | tr ' ' '\t' >> summary.txt
 
 # Clear up
