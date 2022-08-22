@@ -65,8 +65,7 @@ nano ~/.bashrc
 BLASTDB=/desired_database_location
 export BLASTDB
 
-# Exit the file (ctrl + X), save (hit Y), retain file name (hit Enter)
-# Restart ssh client session
+# Exit and restart ssh client session
 ```
 
 
