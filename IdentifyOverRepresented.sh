@@ -10,8 +10,8 @@ inputTrue=`ls -l virusPositives.txt 2>/dev/null | wc -l`
 	fi
 
 # Begin process
-mkdir PotentialHosts
-cd PotentialHosts
+mkdir potentialHosts
+cd potentialHosts
 cp ../virusPositives.txt .
 posCount=`cat virusPositives.txt | wc -l`
 echo "You found $posCount virus positive samples" >> summary.txt; echo >> summary.txt
