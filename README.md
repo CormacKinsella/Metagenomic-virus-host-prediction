@@ -78,28 +78,23 @@ for i in *merge*fmt6; do grep "Entamoeba" $i | awk '$3 == 100' | awk '$4 > 99' |
 ```
  
 ## Step 3: Find potential hosts/taxa of interest (IdentifyOverRepresented.sh)
-**Requires you to have identified a list of virus positive samples, from step 1 output**
-
-- Run this from the o
-
-
-
-
-
-
-
-
-
-## Step 3: Identify potential host taxa enriched in virus positive samples 
-(NAME.sh)
-
-- Manually inspect virus output matrix - apply any cutoffs for calling a sample positive for a virus lineage
-- Generate a text file, **positives.txt**, containing a list of samples positive for your virus lineage of interest, e.g.: 
+Requires you to have identified a list of virus positive samples (**virusPositives.txt**, from step 1 output, e.g.:
 ```
 SRR6713816
 SRR6713817
 SRR6713818
 ````
-- **From the output directory** of steps 1 and 2, run step 3, provided as a bash script
+- The script is run from the output directory of step 2, where you have put **virusPositives.txt**
+```
+bash IdentifyOverRepresented.sh
+```
+
 - Outputs 
+
+
+
+
+
+
+
 
