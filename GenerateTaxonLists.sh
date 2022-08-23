@@ -83,5 +83,5 @@ for i in *taxList; do grep "$taxRank" $i | cut -f2 > ${i}.$taxRank.uniq; done
 # Final clear-up
 gzip *rRNA.sam
 mv *taxList* *merge*fmt6 *rRNA.sam.gz $outdir
-rm *txids *subset*
+rm *subset*
 done < sample_list.txt
