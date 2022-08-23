@@ -22,7 +22,7 @@ cat *uniq | sort > all_taxon_occurences.txt
 
 # Top hits
 echo "In these, the top 25 most frequently found taxa are (sampleCount, taxon):"  >> summary.txt
-cat all_taxon_occurences.txt | uniq -c | sort -k1,1nr | head -n 25 | sed -e 's/^[ \t]*//' | tr ' ' '\t' >> summary.txt; echo >> summary.txt
+cat all_taxon_occurences.txt | uniq -c | sort -k1,1nr | head -n 25 | sed -e 's/^ *//' | tr ' ' '\t' >> summary.txt; echo >> summary.txt
 
 # Clear up
 rm *uniq all_taxon_occurences.txt
