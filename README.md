@@ -76,6 +76,7 @@ tar -xzf taxdb.tar.gz
 ```
 for i in *merge*fmt6; do grep "Entamoeba" $i | awk '$3 == 100' | awk '$4 > 99' | wc -l; done 
 ```
+- Runtime: 
 ## Step 3: Find potential hosts/taxa of interest (IdentifyOverRepresented.sh)
 Requires you to have identified a list of virus positive samples (**virusPositives.txt**), from step 1 output, e.g.:
 ```
