@@ -8,7 +8,9 @@
 #########################################################################
 # SET THESE PARAMETERS (N.B. $TMPDIR variable refers to compute node scratch space, adjust this to your system)
 
-# Activate conda environment: conda activate hostPredict
+# Activate conda environment
+eval "$(conda shell.bash hook)"
+conda activate hostPredict
 
 # Data. Assumes paired-end fastq.gz, with extensions "_1.fastq.gz" & "_2.fastq.gz"
 cp /directory/*fastq.gz $TMPDIR
