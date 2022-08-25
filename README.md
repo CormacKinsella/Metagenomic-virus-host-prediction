@@ -68,6 +68,7 @@ tar -xzf taxdb.tar.gz
 - First two matrix columns contain sample names & read counts for later normalisation
 - Remaining data columns (one per reference genome) contain raw virus read counts after quality control
 - Counts are merged per sample (i.e. forward and reverse read files = 1 data row with total values)
+- Runtime: analysis of 70 GB dataset (PRJNA802076) took 3 hrs 21 minutes (Intel® Xeon® Gold 6130 - 2.10GHz, 16 cores)
 ## Step 2: Metagenomic analysis of eukaryotic taxa in samples (GenerateTaxonLists.sh)
 - Outputs a list of taxa found in each sample, plus additional files for generating further outputs (e.g. taxon lists at alternative taxonomic ranks, read counts of a particular taxon, etc.)
 - Script carries out taxonomy lookups for each unique NCBI taxid found (N.B. BLASTn can also output a scientific name using the outfmt option "ssciname", but this will be the lowest available taxonomy rank, normally but not always the binomial. Using lookups adds a further, rather slow step, but ensures a consistent taxonomic rank (if available), and allows any rank to be selected (e.g. genus, family, etc.). Note that BLASTn is still set to output ssciname, however this is for subsequent parsing of fmt6 files to output read counts for specific genera)
