@@ -1,6 +1,6 @@
 # Metagenomic-virus host prediction
 
-## Linux workflow for predicting hosts of viruses found using metagenomics.
+## Linux workflow for predicting hosts of viruses found using metagenomics
 
 # Background
 - Viruses found in metagenomic datasets are often not linked to their hosts due to high biodiversity in samples (many potential pairings = difficult to infer host)
@@ -76,7 +76,7 @@ tar -xzf taxdb.tar.gz
 ```
 for i in *merge*fmt6; do grep "Entamoeba" $i | awk '$3 == 100' | awk '$4 > 99' | wc -l; done 
 ```
-- Runtime: 
+- Runtime: depending on the number of rRNA reads for BLASTn, this script can take quite a long time to finish. It may be a good idea to split samples across a few independent jobs in that case. 
 ## Step 3: Find potential hosts/taxa of interest (IdentifyOverRepresented.sh)
 Requires you to have identified a list of virus positive samples (**virusPositives.txt**), from step 1 output, e.g.:
 ```
