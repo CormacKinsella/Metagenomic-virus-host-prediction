@@ -1,6 +1,6 @@
 # Metagenomic-virus host prediction
 
-## Linux workflow for predicting hosts of viruses found using metagenomics
+## Shell/bash workflow for predicting hosts of viruses found using metagenomics
 
 ## [Read the paper here](https://doi.org/10.1093/ve/veac087)
 
