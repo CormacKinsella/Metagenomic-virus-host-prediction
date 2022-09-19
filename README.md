@@ -2,6 +2,8 @@
 
 ## Linux workflow for predicting hosts of viruses found using metagenomics
 
+## [Read the paper here](https://doi.org/10.1093/ve/veac087)
+
 # Background
 - Viruses found in metagenomic datasets are often not linked to their hosts due to high biodiversity in samples (many potential pairings = difficult to infer host)
 - Despite this, host nucleic acids are often sequenced alongside their viruses; we must therefore find the needle in the haystack
