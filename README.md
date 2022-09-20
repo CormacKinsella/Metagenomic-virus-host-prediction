@@ -2,6 +2,8 @@
 
 ## Shell/bash workflow for predicting hosts of viruses found using metagenomics
 
+![Banner version](https://user-images.githubusercontent.com/27350062/191237898-d76193f6-e133-4940-993e-2346939db6ff.png)
+
 ## [Read the paper here](https://doi.org/10.1093/ve/veac087)
 
 # Background
