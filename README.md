@@ -50,7 +50,7 @@ conda list
 ```
 wget https://www.arb-silva.de/fileadmin/silva_databases/release_138.1/Exports/SILVA_138.1_SSURef_NR99_tax_silva.fasta.gz
 wget https://www.arb-silva.de/fileadmin/silva_databases/release_138.1/Exports/SILVA_138.1_LSURef_NR99_tax_silva.fasta.gz
-zcat SILVA_138.1_* | sed 's/ /_/g' | sed 's/;/_/g' | sed 's/\//_/g' | sed 's/://g' | sed '/^[^>]/ y/uU/tT/' | gzip > SILVA_138.1_LSU_SSU_Ref_NR99_tax_silva.fasta.gz
+zcat SILVA_138.1_* | sed 'y/ ;\/:/____/; /^[^>]/ y/uU/tT/' | gzip > SILVA_138.1_LSU_SSU_Ref_NR99_tax_silva.fasta.gz
 rm SILVA_138.1_?SURef_NR99_tax_silva.fasta.gz
 ```
 - GenBank nt v5 database. To download, use the script "update_blastdb.pl" provided with BLAST+ (N.B. database is >100 GB)
